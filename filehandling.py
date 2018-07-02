@@ -33,18 +33,19 @@ with open("test.txt",encoding = "utf8") as f:
 #5
 import random
 
-f = open("random.txt","w")
+with open("random.txt","w")as f:
+ for i in range (int(input('How many random numbers? '))):
+    line = str(random.randint(1, 100))
+    f.writelines(line+ '\n')
+    print(line)
 
-for x in range(1,10):
-    x = random.randint(1,12)
-    f.write(str(x))
+with open("random.txt")as f1 , open("sorted.txt", "w")as f2:
+    lines = f1.read().splitlines()
+    lines.sort()
 
-x = [7338892211]
-b = x.sort()
-print(b)
+    for l in lines:
+        f2.write(str(l) + '\n')
 
-f1= open("sorted.txt","w")
-f1.write(str(b))
 
 
 
