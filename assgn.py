@@ -1,20 +1,42 @@
+#1
 import numpy as np
-a = np.array ([[2.46869],
-               [4.57689],
-                [3.6809],
-                [1.577686],
-                  [0.5809],
-                  [5.79999],
-                   [0.3456],
-                    [3.780],
-                  [0.476734],
-                  [0.45567]])
+array = np.random.rand(10, 1)
+print(array)
+print(array.mean())
 
-print("Our array is : ")
+
+#2
+import numpy as np
+array = np.random.rand(20,1)
+print(array)
+variance = array.std()
+standard_deviation = (array - array.mean())/variance
+
+print("Variance : {} \n\nStandard Deviation : \n {}".format(variance, standard_deviation))
+
+
+#3
+import numpy as np
+A = np.random.rand(10,20)
+B = np.random.rand(20,25)
+print(A)
+print("\n")
+print(B)
+print("\n")
+matrix_mul = np.matmul(A,B)
+print(matrix_mul)
+
+
+#4
+import numpy as np
+a = np.random.rand(10, 1)
 print(a)
-print("\n")
 
-print("Applying mean() function: ")
-print(np.mean(a))
-print("\n")
+def func(x):
+    return (1 / (1 + np.exp(-x)))
 
+
+result = np.apply_along_axis(func, 0, a)
+
+
+print( result)
